@@ -7,9 +7,3 @@ steps:
     image: golang:1.21
     commands:
       - go build -o myapp
-
-  - name: docker_build
-    image: docker
-    commands:
-      - docker build -t my-docker-repo/my-golang-app:${DRONE_COMMIT_SHA} .
-      # 将构建的 Docker 镜像标记为使用当前 Git 提交的 SHA 值
